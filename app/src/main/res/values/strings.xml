@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">Aplicación Deportiva</string>
+    <string name="app_name">Gym App</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="weight">Weight</string>
+    <string name="stretching">Stretching</string>
+    <string name="nutrition">Nutrition</string>
+    <string name="trainingPlans">Training plans</string>
 </resources>
