@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Gym App</string>
     <string name="title_home">Menú</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_settings">Configuración</string>
     <string name="title_notifications">Notificationes</string>
 
     <string name="weight">Peso</string>
