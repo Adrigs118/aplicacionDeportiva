@@ -17,16 +17,32 @@
             app:destination="@id/navigation_notifications" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_nutrition"
-            app:destination="@+id/navigation_nutrition" />
+            app:destination="@+id/navigation_nutrition"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_stretchting"
-            app:destination="@id/navigation_stretchting" />
+            app:destination="@id/navigation_stretchting"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_weight"
-            app:destination="@id/navigation_weight" />
+            app:destination="@id/navigation_weight"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_training"
-            app:destination="@id/navigation_training" />
+            app:destination="@id/navigation_training"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
