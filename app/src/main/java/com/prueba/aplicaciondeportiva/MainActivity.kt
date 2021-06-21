@@ -35,4 +35,4 @@ class MainActivity : AppCompatActivity(){
         navView.setupWithNavController(navController)
     }
 
-}
+}//context!!.resources.configuration.locale.toString().contains("es")
