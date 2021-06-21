@@ -10,14 +10,17 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() , View.OnClickListener {
+class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
+
+        Utils.initUtils(this)
 
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
@@ -30,22 +33,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
     }
 
-    override fun onClick(v: View?) {
-        //val nutritionIntent = Intent(this, NutritionActivity::class.java)
-        //startActivity(nutritionIntent)
-        finish()
-    }
-
-
-        /*
-        val weightIntent = Intent(this, WeightActivity::class.java)
-        val stretchtingIntent = Intent(this, StretchtingActivity::class.java)
-        val trainingIntent = Intent(this, TrainingPlansActivity::class.java)
-
-    }
-
-*/
 }

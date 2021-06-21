@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Gym App</string>
     <string name="title_home">Menú</string>
     <string name="title_settings">Configuración</string>
     <string name="title_notifications">Notificationes</string>
+    <string name="language">Idioma</string>
 
     <string name="weight">Peso</string>
     <string name="stretching">Estiramientos</string>
     <string name="nutrition">Nutrición</string>
     <string name="trainingPlans">Planes de entrenamiento</string>
+
+    <string-array name="languages_array">
+        <item>English</item>
+        <item>Español</item>
+    </string-array>
 </resources>

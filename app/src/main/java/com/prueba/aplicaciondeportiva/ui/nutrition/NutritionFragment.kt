@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.prueba.aplicaciondeportiva.R
-import com.prueba.aplicaciondeportiva.ui.notifications.NotificationsViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class NutritionFragment : Fragment(){
