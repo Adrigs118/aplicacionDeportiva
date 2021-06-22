@@ -8,16 +8,14 @@
     tools:context="ui.nutrition.NutritionFragment"
     android:paddingTop="?attr/actionBarSize">
 
-    <Button
-        android:id="@+id/button4"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="336dp"
-        android:gravity="center"
-        android:text="@string/nutrition"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <Button
+            android:id="@+id/button8"
+            style="@style/MenuButtonStyle"
+            android:text="Dietas" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

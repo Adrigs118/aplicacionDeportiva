@@ -10,6 +10,14 @@
     <string name="nutrition">Nutrición</string>
     <string name="trainingPlans">Planes de entrenamiento</string>
 
+    <string name="monday">Lunes</string>
+    <string name="tuesday">Martes</string>
+    <string name="wednesday">Miercoles</string>
+    <string name="thursday">Jueves</string>
+    <string name="friday">Viernes</string>
+    <string name="saturday">Sabado</string>
+    <string name="sunday">Domingo</string>
+
     <string-array name="languages_array">
         <item>English</item>
         <item>Español</item>

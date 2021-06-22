@@ -14,6 +14,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -27,7 +28,7 @@ import org.intellij.lang.annotations.Language
 class SettingsFragment : Fragment(){
 
     private lateinit var settingsViewModel: SettingsViewModel
-    private lateinit var language: String
+    private var language: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,6 +58,11 @@ class SettingsFragment : Fragment(){
 
         initialize()
 
+        if(language.isNullOrEmpty()) {
+            language = "es"
+            addSettings()
+        }
+
         if(language == "es"){
             languages.setSelection(1)
         }
@@ -80,31 +86,29 @@ class SettingsFragment : Fragment(){
             }
         }
     }
-/*
+
     private fun addObserver(){
         val observer = Observer<List<SettingsEntity>> { settings ->
             if( settings != null){
                 for (setting in settings){
-
+                    if(setting.language != null)
+                        this.language = setting.language
                 }
             }
         }
         settingsViewModel.setting.observe(this, observer)
     }
-    */
-
 
     private fun initialize(){
-       /* val settings : MutableLiveData<List<SettingsEntity>> = settingsViewModel.setting
-        for(setting :SettingsEntity in settings.value){
-
-        }
-        */
-
+        addObserver()
     }
 
     private fun updateSettings() {
         settingsViewModel.updateSetting(SettingsEntity(this))
+    }
+
+    private fun addSettings() {
+        settingsViewModel.saveSetting(SettingsEntity(this))
     }
 
     fun reload(){
@@ -113,8 +117,6 @@ class SettingsFragment : Fragment(){
             ft.attach(this)
             ft.commit()*/
     }
-
-
 
     // region Getters&Setters
 

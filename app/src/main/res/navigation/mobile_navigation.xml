@@ -60,7 +60,15 @@
         android:id="@+id/navigation_nutrition"
         android:name="com.prueba.aplicaciondeportiva.ui.nutrition.NutritionFragment"
         android:label="@string/nutrition"
-        tools:layout="@layout/fragment_nutrition" />
+        tools:layout="@layout/fragment_nutrition" >
+        <action
+            android:id="@+id/action_navigation_nutrition_to_dietsFragment"
+            app:destination="@id/dietsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_stretchting"
@@ -79,5 +87,29 @@
         android:name="com.prueba.aplicaciondeportiva.ui.weight.WeightFragment"
         android:label="@string/weight"
         tools:layout="@layout/fragment_weight" />
+    <fragment
+        android:id="@+id/dietFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.nutrition.DietFragment"
+        android:label="fragment_diet"
+        tools:layout="@layout/fragment_diet" >
+        <argument
+            android:name="NAME"
+            app:argType="string"
+            android:defaultValue="New Diet" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietsFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.nutrition.DietsFragment"
+        android:label="fragment_diets"
+        tools:layout="@layout/fragment_diets" >
+        <action
+            android:id="@+id/action_dietsFragment_to_dietFragment"
+            app:destination="@id/dietFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
 </navigation>

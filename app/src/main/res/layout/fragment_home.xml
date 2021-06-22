@@ -28,27 +28,23 @@
 
         <Button
             android:id="@+id/stretchingButton"
-            android:layout_width="match_parent"
+            style="@style/MenuButtonStyle"
             android:layout_marginTop="10dp"
-            android:layout_height="100dp"
             android:text="@string/stretching" />
 
         <Button
             android:id="@+id/trainingPlansButton"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            style="@style/MenuButtonStyle"
             android:text="@string/trainingPlans" />
 
         <Button
             android:id="@+id/weightButton"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            style="@style/MenuButtonStyle"
             android:text="@string/weight" />
 
         <Button
             android:id="@+id/nutritionButton"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            style="@style/MenuButtonStyle"
             android:text="@string/nutrition" />
     </LinearLayout>
 
