@@ -12,40 +12,48 @@ import android.util.DisplayMetrics
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.fragment.findNavController
+import com.prueba.aplicaciondeportiva.Diet
+import com.prueba.aplicaciondeportiva.Utils
 import kotlinx.android.synthetic.main.fragment_diet.*
 import kotlinx.android.synthetic.main.fragment_diets.*
 
-class DietFragment : Fragment() {
+class DietFragment (): Fragment() {
+
+    private lateinit  var  diet: Diet
+
+    fun getDiet() :Diet {return diet}
+    fun setDiet(diet : Diet) { this.diet = diet}
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_diet, container, false)
+        val root = inflater.inflate(com.prueba.aplicaciondeportiva.R.layout.fragment_diet, container, false)
+
+        if(Utils.getDietContext() == null) diet = Diet()
+        else diet = Utils.getDietContext()!!
+        //this.diet = Utils.stringToDiet(arguments?.getStringArray("DIETA")!!.reversedArray())
+
         return root
     }
 
     override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val displayMetrics = context!!.getResources().displayMetrics
-        val dpWidth = displayMetrics.widthPixels / displayMetrics.density
-
-        val title: String? = arguments?.getString("NAME")
+        val graph = findNavController().graph
+        graph.label = diet.getName()
 
         val adapter = SectionsPagerAdapter(childFragmentManager)
-        adapter.addFragment(DietDescriptionFragment(), "Monday")
-        adapter.addFragment(DietDescriptionFragment(), "Tuesday")
-        adapter.addFragment(DietDescriptionFragment(), "Wednesday")
-        adapter.addFragment(DietDescriptionFragment(), "Thursday")
-        adapter.addFragment(DietDescriptionFragment(), "Friday")
-        adapter.addFragment(DietDescriptionFragment(), "Saturday")
-        adapter.addFragment(DietDescriptionFragment(), "Sunday")
+        adapter.addFragment(DietDescriptionFragment(diet.getMonday()), getString(R.string.monday))
+        adapter.addFragment(DietDescriptionFragment(diet.getTuesday()), getString(R.string.tuesday))
+        adapter.addFragment(DietDescriptionFragment(diet.getWednesday()), getString(R.string.wednesday))
+        adapter.addFragment(DietDescriptionFragment(diet.getThursday()), getString(R.string.thursday))
+        adapter.addFragment(DietDescriptionFragment(diet.getFriday()), getString(R.string.friday))
+        adapter.addFragment(DietDescriptionFragment(diet.getSaturday()), getString(R.string.saturday))
+        adapter.addFragment(DietDescriptionFragment(diet.getSunday()), getString(R.string.sunday))
         dietViewPager.adapter = adapter
         dietTabs.setupWithViewPager(dietViewPager)
-
-        //tituloDietatextView.setText(title)
     }
 
     inner class SectionsPagerAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm){
@@ -69,16 +77,5 @@ class DietFragment : Fragment() {
         override fun getPageTitle(position: Int): CharSequence? {
             return titleList[position]
         }
-
-            /*when (position) {
-                0 -> return "MONDAY"
-                1 -> return "TUESDAY"
-                2 -> return "WEDNESDAY"
-                3 -> return "THURSDAY"
-                4 -> return "FRIDAY"
-                5 -> return "SATURDAY"
-                6 -> return "SUNDAY"
-                else -> return ""
-            }*/
     }
 }

@@ -9,6 +9,7 @@
     <string name="stretching">Estiramientos</string>
     <string name="nutrition">Nutrición</string>
     <string name="trainingPlans">Planes de entrenamiento</string>
+    <string name="diets">Dietas</string>
 
     <string name="monday">Lunes</string>
     <string name="tuesday">Martes</string>
@@ -17,6 +18,12 @@
     <string name="friday">Viernes</string>
     <string name="saturday">Sabado</string>
     <string name="sunday">Domingo</string>
+
+    <string name="breakfast">Desayuno</string>
+    <string name="lunch">Almuerzo</string>
+    <string name="meal">Comida</string>
+    <string name="snack">Merienda</string>
+    <string name="dinner">Cena</string>
 
     <string-array name="languages_array">
         <item>English</item>
