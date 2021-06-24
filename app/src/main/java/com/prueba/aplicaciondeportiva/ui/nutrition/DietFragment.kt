@@ -17,7 +17,7 @@ import com.prueba.aplicaciondeportiva.Utils
 import kotlinx.android.synthetic.main.fragment_diet.*
 import kotlinx.android.synthetic.main.fragment_diets.*
 
-class DietFragment (): Fragment() {
+class DietFragment : Fragment() {
 
     private lateinit  var  diet: Diet
 

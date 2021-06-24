@@ -1,12 +1,10 @@
 package com.prueba.aplicaciondeportiva.ui.nutrition
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.prueba.aplicaciondeportiva.Diet
 import com.prueba.aplicaciondeportiva.R
 import com.prueba.aplicaciondeportiva.Utils
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_diets.*
-import java.util.*
 
 class DietsFragment : Fragment() {
 
@@ -66,7 +62,7 @@ class DietsFragment : Fragment() {
             var description: TextView
 
             init {
-                name = itemView.findViewById(R.id.diet_name)
+                name = itemView.findViewById(R.id.chestS_name)
                 description = itemView.findViewById(R.id.diet_desc)
 
                 itemView.setOnClickListener {
