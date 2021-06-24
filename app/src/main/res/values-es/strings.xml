@@ -25,6 +25,15 @@
     <string name="snack">Merienda</string>
     <string name="dinner">Cena</string>
 
+    <string name="chest">Pecho</string>
+    <string name="espalda">Espalda</string>
+    <string name="bicep">Bicep</string>
+    <string name="tricep">Tricep</string>
+    <string name="shoulder">Hombro</string>
+    <string name="abdomen">Abdomen</string>
+    <string name="front_leg">Pierna delantera</string>
+    <string name="back_leg">Pierna trasera</string>
+
     <string-array name="languages_array">
         <item>English</item>
         <item>Español</item>

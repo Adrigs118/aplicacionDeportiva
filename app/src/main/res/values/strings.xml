@@ -25,6 +25,15 @@
     <string name="snack">Snack</string>
     <string name="dinner">Dinner</string>
 
+    <string name="chest">Chest</string>
+    <string name="espalda">Back</string>
+    <string name="bicep">Bicep</string>
+    <string name="tricep">Tricep</string>
+    <string name="shoulder">Shoulder</string>
+    <string name="abdomen">Abdomen</string>
+    <string name="front_leg">Front leg</string>
+    <string name="back_leg">Back leg</string>
+
     <string-array name="languages_array">
         <item>English</item>
         <item>Español</item>
