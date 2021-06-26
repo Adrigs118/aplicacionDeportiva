@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.prueba.aplicaciondeportiva.Diet
 import com.prueba.aplicaciondeportiva.R
-import com.prueba.aplicaciondeportiva.Utils
+import com.prueba.aplicaciondeportiva.utils.Utils
 import kotlinx.android.synthetic.main.fragment_diets.*
 
 class DietsFragment : Fragment() {
@@ -62,7 +62,7 @@ class DietsFragment : Fragment() {
             var description: TextView
 
             init {
-                name = itemView.findViewById(R.id.chestS_name)
+                name = itemView.findViewById(R.id.textView_diet_name)
                 description = itemView.findViewById(R.id.diet_desc)
 
                 itemView.setOnClickListener {

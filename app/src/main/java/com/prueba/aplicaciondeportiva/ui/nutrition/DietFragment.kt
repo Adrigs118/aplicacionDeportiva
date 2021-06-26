@@ -1,21 +1,17 @@
 package com.prueba.aplicaciondeportiva.ui.nutrition
 
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.prueba.aplicaciondeportiva.R
-import android.util.DisplayMetrics
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.fragment.findNavController
 import com.prueba.aplicaciondeportiva.Diet
-import com.prueba.aplicaciondeportiva.Utils
+import com.prueba.aplicaciondeportiva.utils.Utils
 import kotlinx.android.synthetic.main.fragment_diet.*
-import kotlinx.android.synthetic.main.fragment_diets.*
 
 class DietFragment : Fragment() {
 

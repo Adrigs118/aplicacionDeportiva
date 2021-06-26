@@ -1,4 +1,4 @@
-package com.prueba.aplicaciondeportiva
+package com.prueba.aplicaciondeportiva.utils
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,8 @@ import android.os.Handler
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import com.prueba.aplicaciondeportiva.MainActivity
+import com.prueba.aplicaciondeportiva.R
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
@@ -21,7 +23,9 @@ class SplashScreen : AppCompatActivity() {
         )
 
         val backgroundImage : ImageView = findViewById(R.id.SplashScreenImage)
-        val rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotation)
+        val rotateAnimation = AnimationUtils.loadAnimation(this,
+            R.anim.rotation
+        )
         backgroundImage.startAnimation(rotateAnimation)
 
         Handler().postDelayed({
