@@ -3,6 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorVerdeClaro">#e6ffee</color>
+    <color name="colorVerdeClaro">#E1E0F892</color>
     <color name="colorVerdeClaroMenu">#ccffdd</color>
+    <color name="colorPrefab_diet">#A857A505</color>
 </resources>

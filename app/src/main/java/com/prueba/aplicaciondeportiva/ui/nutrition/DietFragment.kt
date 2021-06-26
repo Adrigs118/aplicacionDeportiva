@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.navigation.fragment.findNavController
 import com.prueba.aplicaciondeportiva.Diet
+import com.prueba.aplicaciondeportiva.MainActivity
 import com.prueba.aplicaciondeportiva.utils.Utils
 import kotlinx.android.synthetic.main.fragment_diet.*
 
@@ -37,8 +38,8 @@ class DietFragment : Fragment() {
     override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val graph = findNavController().graph
-        graph.label = diet.getName()
+        val act : MainActivity= activity as MainActivity
+        act.setActionBarTitle(diet.getName())
 
         val adapter = SectionsPagerAdapter(childFragmentManager)
         adapter.addFragment(DietDescriptionFragment(diet.getMonday()), getString(R.string.monday))

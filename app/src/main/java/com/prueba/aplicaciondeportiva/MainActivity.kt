@@ -32,4 +32,8 @@ class MainActivity : AppCompatActivity(){
         navView.setupWithNavController(navController)
     }
 
+    fun setActionBarTitle(title :String){
+        supportActionBar?.title = title
+    }
+
 }//context!!.resources.configuration.locale.toString().contains("es")

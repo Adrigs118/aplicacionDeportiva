@@ -5,9 +5,43 @@
     tools:context="ui.training.TrainingFragment"
     android:layout_height="match_parent">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="22dp" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/trainingPlans" />
+        android:layout_height="114dp"
+        android:text="Mi entrenamiento" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:alpha="80"
+        android:background="#4DBB3547" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:text="Entrenamientos" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:text="Ejercicios" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:text="Reloj" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Calendario" />
 </LinearLayout>
