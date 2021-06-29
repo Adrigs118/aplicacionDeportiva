@@ -36,34 +36,6 @@ class DietsViewModel : ViewModel(){
         return allDiets
     }
 
-    //region Database functions
-
-    fun existName(name : String) :Boolean{
-        for(diet in allDiets.value!!){
-            if(diet.diet.name == name) return true
-        }
-        return false
-    }
-
-    fun insert(entity : DietWithDay) {
-        viewModelScope.launch {
-            repository.insert(entity)
-        }
-    }
-
-    fun delete(entity : DietWithDay) {
-        viewModelScope.launch {
-            repository.delete(entity)
-        }
-    }
-
-    fun updateDiet(entity : DietWithDay) {
-        viewModelScope.launch {
-            repository.update(entity)
-        }
-    }
-    //endregion
-
     inner class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
         var items : ArrayList<DietWithDay> = ArrayList<DietWithDay>()

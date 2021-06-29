@@ -36,6 +36,14 @@
 
     <string name="warning_diet_name">The name field cannot be empty</string>
     <string name="error_name_exist">The name field exist</string>
+    <string name="information_delete">Do you want to eliminate this diet?</string>
+    <string name="error_bd">BD Error, check fields</string>
+
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="information">Information</string>
+    <string name="warning">Warning</string>
+    <string name="Error">Error</string>
 
     <string-array name="languages_array">
         <item>English</item>

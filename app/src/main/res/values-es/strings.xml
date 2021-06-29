@@ -36,6 +36,14 @@
 
     <string name="warning_diet_name">El campo nombre no puede estar vacío</string>
     <string name="error_name_exist">El campo nombre ya existe</string>
+    <string name="information_delete">¿Desea eliminar esta dieta?</string>
+    <string name="error_bd">BD Error, Comprueba los campos</string>
+
+    <string name="dialog_yes">Sí</string>
+    <string name="dialog_cancel">Cancelar</string>
+    <string name="information">Información</string>
+    <string name="warning">Atención</string>
+    <string name="Error">Error</string>
 
     <string-array name="languages_array">
         <item>English</item>

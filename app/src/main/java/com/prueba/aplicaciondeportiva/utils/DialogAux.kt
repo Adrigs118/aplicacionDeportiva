@@ -9,6 +9,8 @@ import com.prueba.aplicaciondeportiva.R
 
 class DialogAux (val typeDialog : TypeDialog, val message : String, val positiveButton : Boolean) : DialogFragment(){
 
+    var positive : Boolean = false
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             // Use the Builder class for convenient dialog construction
@@ -16,11 +18,11 @@ class DialogAux (val typeDialog : TypeDialog, val message : String, val positive
 
             if(positiveButton){
                 builder.setMessage(message)
-                    .setPositiveButton("YES",
+                    .setPositiveButton(getString(R.string.dialog_yes),
                         DialogInterface.OnClickListener { dialog, id ->
-                            // FIRE ZE MISSILES!
+                            positive = true
                         })
-                    .setNegativeButton("Cancel",
+                    .setNegativeButton(getString(R.string.dialog_cancel),
                         DialogInterface.OnClickListener { dialog, id ->
                             // User cancelled the dialog
                         })
