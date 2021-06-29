@@ -5,17 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.prueba.aplicaciondeportiva.R
+import com.prueba.aplicaciondeportiva.viewModel.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
+
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         return root
     }
@@ -24,23 +29,19 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         nutritionButton.setOnClickListener {
-            val action = HomeFragmentDirections.action_navigation_home_to_navigation_nutrition()
-            findNavController().navigate(action)
+            viewModel.navigateToNutrition(view)
         }
 
         stretchingButton.setOnClickListener {
-            val action = HomeFragmentDirections.action_navigation_home_to_navigation_stretchting()
-            findNavController().navigate(action)
+            viewModel.navigateToStretchting(view)
         }
 
         trainingPlansButton.setOnClickListener {
-            val action = HomeFragmentDirections.action_navigation_home_to_navigation_training()
-            findNavController().navigate(action)
+            viewModel.navigateToTraining(view)
         }
 
         weightButton.setOnClickListener {
-            val action = HomeFragmentDirections.action_navigation_home_to_navigation_weight()
-            findNavController().navigate(action)
+            viewModel.navigateToWeight(view)
         }
     }
 }

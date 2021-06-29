@@ -1,4 +1,4 @@
-package com.prueba.aplicaciondeportiva.ui.notifications
+package com.prueba.aplicaciondeportiva.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

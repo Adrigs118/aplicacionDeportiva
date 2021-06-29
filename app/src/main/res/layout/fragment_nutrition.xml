@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/diets"
     tools:context="ui.nutrition.NutritionFragment"
+    android:paddingBottom="?attr/actionBarSize"
     android:paddingTop="?attr/actionBarSize">
 
     <LinearLayout
@@ -15,8 +16,10 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/button_diets"
             style="@style/MenuButtonStyle"
-            android:text="Dietas" />
+            android:layout_width="match_parent"
+            android:background="@color/colorPrefab_diet"
+            android:text="@string/diets" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

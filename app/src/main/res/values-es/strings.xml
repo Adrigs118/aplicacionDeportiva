@@ -34,6 +34,9 @@
     <string name="front_leg">Pierna delantera</string>
     <string name="back_leg">Pierna trasera</string>
 
+    <string name="warning_diet_name">El campo nombre no puede estar vacío</string>
+    <string name="error_name_exist">El campo nombre ya existe</string>
+
     <string-array name="languages_array">
         <item>English</item>
         <item>Español</item>

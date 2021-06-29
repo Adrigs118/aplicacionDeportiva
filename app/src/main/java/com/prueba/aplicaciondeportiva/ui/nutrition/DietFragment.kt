@@ -8,18 +8,18 @@ import androidx.fragment.app.Fragment
 import com.prueba.aplicaciondeportiva.R
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.navigation.fragment.findNavController
-import com.prueba.aplicaciondeportiva.Diet
 import com.prueba.aplicaciondeportiva.MainActivity
+import com.prueba.aplicaciondeportiva.database.Entity.DietEntity
+import com.prueba.aplicaciondeportiva.database.Entity.DietWithDay
 import com.prueba.aplicaciondeportiva.utils.Utils
 import kotlinx.android.synthetic.main.fragment_diet.*
 
 class DietFragment : Fragment() {
 
-    private lateinit  var  diet: Diet
+    private lateinit  var  diet: DietWithDay
 
-    fun getDiet() :Diet {return diet}
-    fun setDiet(diet : Diet) { this.diet = diet}
+    fun getDiet() :DietWithDay {return diet}
+    fun setDiet(diet : DietWithDay) { this.diet = diet}
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,9 +28,8 @@ class DietFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(com.prueba.aplicaciondeportiva.R.layout.fragment_diet, container, false)
 
-        if(Utils.getDietContext() == null) diet = Diet()
+        if(Utils.getDietContext() == null) diet = DietWithDay()
         else diet = Utils.getDietContext()!!
-        //this.diet = Utils.stringToDiet(arguments?.getStringArray("DIETA")!!.reversedArray())
 
         return root
     }
@@ -39,16 +38,17 @@ class DietFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val act : MainActivity= activity as MainActivity
-        act.setActionBarTitle(diet.getName())
+        act.setActionBarTitle(diet.diet.name)
 
         val adapter = SectionsPagerAdapter(childFragmentManager)
-        adapter.addFragment(DietDescriptionFragment(diet.getMonday()), getString(R.string.monday))
-        adapter.addFragment(DietDescriptionFragment(diet.getTuesday()), getString(R.string.tuesday))
-        adapter.addFragment(DietDescriptionFragment(diet.getWednesday()), getString(R.string.wednesday))
-        adapter.addFragment(DietDescriptionFragment(diet.getThursday()), getString(R.string.thursday))
-        adapter.addFragment(DietDescriptionFragment(diet.getFriday()), getString(R.string.friday))
-        adapter.addFragment(DietDescriptionFragment(diet.getSaturday()), getString(R.string.saturday))
-        adapter.addFragment(DietDescriptionFragment(diet.getSunday()), getString(R.string.sunday))
+
+        adapter.addFragment(DietDescriptionFragment(diet.days[0]), getString(R.string.monday))
+        adapter.addFragment(DietDescriptionFragment(diet.days[1]), getString(R.string.tuesday))
+        adapter.addFragment(DietDescriptionFragment(diet.days[2]), getString(R.string.wednesday))
+        adapter.addFragment(DietDescriptionFragment(diet.days[3]), getString(R.string.thursday))
+        adapter.addFragment(DietDescriptionFragment(diet.days[4]), getString(R.string.friday))
+        adapter.addFragment(DietDescriptionFragment(diet.days[5]), getString(R.string.saturday))
+        adapter.addFragment(DietDescriptionFragment(diet.days[6]), getString(R.string.sunday))
         dietViewPager.adapter = adapter
         dietTabs.setupWithViewPager(dietViewPager)
     }

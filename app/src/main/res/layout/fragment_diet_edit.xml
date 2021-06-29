@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@mipmap/diets"
+    android:paddingBottom="65dp"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_diet_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="16dp"
+                android:foreground="?selectableItemBackground"
+                android:outlineSpotShadowColor="@color/colorPrefab_diet"
+                card_view:cardBackgroundColor="@color/colorPrefab_diet"
+                card_view:cardCornerRadius="8dp"
+                card_view:contentPadding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/editTextName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:hint="Name"
+                            android:inputType="textPersonName"
+                            android:maxLength="30"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/editTextDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:hint="Description"
+                            android:inputType="textPersonName"
+                            android:maxLength="40" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_monday"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:paddingStart="10dp"
+                        android:paddingTop="8dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/monday"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText_breakfast"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="@string/breakfast"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_lunch"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="@string/lunch"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_meal"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="@string/meal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_snack"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="@string/snack"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_dinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="@string/dinner"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <Button
+                        android:id="@+id/button_tuesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:paddingStart="10dp"
+                        android:paddingTop="8dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/tuesday"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText_breakfast2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Breakfast"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_lunch2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="lunch"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_meal2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Meal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_snack2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Snack"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_dinner2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Dinner"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <Button
+                        android:id="@+id/button_wednesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:paddingStart="10dp"
+                        android:paddingTop="8dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/wednesday"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText_breakfast3"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Breakfast"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_lunch3"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="lunch"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_meal3"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Meal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_snack3"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Snack"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_dinner3"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Dinner"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <Button
+                        android:id="@+id/button_thursday"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:paddingStart="10dp"
+                        android:paddingTop="8dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/thursday"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText_breakfast4"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Breakfast"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_lunch4"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="lunch"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_meal4"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Meal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_snack4"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Snack"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_dinner4"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Dinner"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <Button
+                        android:id="@+id/button_friday"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:paddingStart="10dp"
+                        android:paddingTop="8dp"
+                        android:text="@string/friday"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText_breakfast5"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Breakfast"
+                        android:inputType="textMultiLine"
+                        android:maxLength="60" />
+
+                    <EditText
+                        android:id="@+id/editText_lunch5"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="lunch"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_meal5"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Meal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_snack5"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Snack"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_dinner5"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Dinner"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <Button
+                        android:id="@+id/button_saturday"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="40dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:paddingStart="10dp"
+                        android:paddingTop="8dp"
+                        android:text="@string/saturday"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText_breakfast6"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Breakfast"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_lunch6"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="lunch"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_meal6"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Meal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_snack6"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Snack"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_dinner6"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Dinner"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <Button
+                        android:id="@+id/button_sunday"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="40dp"
+                        android:background="@android:color/holo_green_dark"
+                        android:paddingStart="10dp"
+                        android:paddingTop="8dp"
+                        android:text="@string/sunday"
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/editText_breakfast7"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Breakfast"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_lunch7"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="lunch"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_meal7"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Meal"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_snack7"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Snack"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <EditText
+                        android:id="@+id/editText_dinner7"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:hint="Dinner"
+                        android:inputType="textMultiLine"
+                        android:maxLength="80" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView_diet_new"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/holo_green_dark"
+                            card_view:srcCompat="@drawable/ic_add_black_24dp" />
+
+                        <ImageView
+                            android:id="@+id/imageView_diet_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:background="@android:color/holo_green_dark"
+                            card_view:srcCompat="@drawable/ic_create_black_24dp" />
+
+                        <ImageView
+                            android:id="@+id/imageView_diet_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:background="@android:color/holo_green_dark"
+                            android:layout_weight="1"
+                            card_view:srcCompat="@drawable/ic_clear_black_24dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

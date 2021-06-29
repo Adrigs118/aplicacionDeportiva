@@ -4,15 +4,17 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.prueba.aplicaciondeportiva.database.Dao.SettingsDao
-import com.prueba.aplicaciondeportiva.database.Entity.SettingsEntity
+import com.prueba.aplicaciondeportiva.database.Dao.DietDao
+import com.prueba.aplicaciondeportiva.database.Entity.DietDayEntity
+import com.prueba.aplicaciondeportiva.database.Entity.DietEntity
+import com.prueba.aplicaciondeportiva.database.Entity.DietWithDay
 
-@Database(entities = [SettingsEntity::class], version = 1)
+@Database(entities = [DietEntity::class, DietDayEntity::class], version = 1)
 abstract class GymDatabase : RoomDatabase() {
-    abstract  fun settingsDao(): SettingsDao
+    abstract  fun dietDao() : DietDao
 
     companion object {
-        private  const val DATABASE_NAME = "gym_database"
+        const val DATABASE_NAME = "gym_database"
         @Volatile
         private var INSTANCE: GymDatabase? = null
 
@@ -26,7 +28,6 @@ abstract class GymDatabase : RoomDatabase() {
             }
             return INSTANCE
         }
-
     }
 
 

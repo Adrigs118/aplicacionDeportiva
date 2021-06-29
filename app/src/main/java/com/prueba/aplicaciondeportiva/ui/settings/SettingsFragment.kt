@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.prueba.aplicaciondeportiva.utils.Utils
-import com.prueba.aplicaciondeportiva.database.Entity.SettingsEntity
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 
@@ -45,11 +44,9 @@ class SettingsFragment : Fragment(){
             languages.adapter = adapter
         }
 
-        initialize()
 
         if(language.isNullOrEmpty()) {
             language = "es"
-            addSettings()
         }
 
         if(language == "es"){
@@ -71,33 +68,9 @@ class SettingsFragment : Fragment(){
                 }
 
                 Utils.setAppLocale(Utils.getApplicationContext(), language)
-                updateSettings()
+
             }
         }
-    }
-
-    private fun addObserver(){
-        val observer = Observer<List<SettingsEntity>> { settings ->
-            if( settings != null){
-                for (setting in settings){
-                    if(setting.language != null)
-                        this.language = setting.language
-                }
-            }
-        }
-        settingsViewModel.setting.observe(this, observer)
-    }
-
-    private fun initialize(){
-        addObserver()
-    }
-
-    private fun updateSettings() {
-        settingsViewModel.updateSetting(SettingsEntity(this))
-    }
-
-    private fun addSettings() {
-        settingsViewModel.saveSetting(SettingsEntity(this))
     }
 
     fun reload(){

@@ -113,6 +113,10 @@
             app:launchSingleTop="false"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dietsFragment_to_dietEditFragment"
+            app:destination="@id/dietEditFragment"
+            app:enterAnim="@anim/slide_in_top" />
     </fragment>
     <fragment
         android:id="@+id/stretchtingPartFragment"
@@ -120,6 +124,14 @@
         android:label="StretchtingPartFragment" >
         <argument
             android:name="BODYPART"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietEditFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.nutrition.DietEditFragment"
+        android:label="DietEditFragment" >
+        <argument
+            android:name="TIPO"
             app:argType="string" />
     </fragment>
 

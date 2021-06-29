@@ -10,15 +10,19 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.prueba.aplicaciondeportiva.R
+import com.prueba.aplicaciondeportiva.viewModel.nutrition.NutritionViewModel
 import kotlinx.android.synthetic.main.fragment_nutrition.*
 
 class NutritionFragment : Fragment(){
+
+    private lateinit var viewModel: NutritionViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = ViewModelProviders.of(this).get(NutritionViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_nutrition, container, false)
         return root
     }
@@ -26,9 +30,8 @@ class NutritionFragment : Fragment(){
     override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button8.setOnClickListener {
-            val action = NutritionFragmentDirections.action_navigation_nutrition_to_dietsFragment()
-            findNavController().navigate(action)
+        button_diets.setOnClickListener {
+            viewModel.navToDiets(view)
         }
     }
 }
