@@ -5,11 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.prueba.aplicaciondeportiva.database.Dao.DietDao
+import com.prueba.aplicaciondeportiva.database.Entity.BodyEntity
 import com.prueba.aplicaciondeportiva.database.Entity.DietDayEntity
 import com.prueba.aplicaciondeportiva.database.Entity.DietEntity
 import com.prueba.aplicaciondeportiva.database.Entity.DietWithDay
 
-@Database(entities = [DietEntity::class, DietDayEntity::class], version = 1)
+@Database(entities = [DietEntity::class,
+    DietDayEntity::class, BodyEntity::class], version = 1)
 abstract class GymDatabase : RoomDatabase() {
     abstract  fun dietDao() : DietDao
 
