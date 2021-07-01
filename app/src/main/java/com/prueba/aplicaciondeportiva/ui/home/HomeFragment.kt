@@ -28,19 +28,19 @@ class HomeFragment : Fragment() {
     override  fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
 
-        nutritionButton.setOnClickListener {
+        card_nutrition.setOnClickListener {
             viewModel.navigateToNutrition(view)
         }
 
-        stretchingButton.setOnClickListener {
+        card_strechting.setOnClickListener {
             viewModel.navigateToStretchting(view)
         }
 
-        trainingPlansButton.setOnClickListener {
+        card_training.setOnClickListener {
             viewModel.navigateToTraining(view)
         }
 
-        weightButton.setOnClickListener {
+        card_weight.setOnClickListener {
             viewModel.navigateToWeight(view)
         }
     }

@@ -7,7 +7,7 @@ import com.prueba.aplicaciondeportiva.database.Entity.BodyEntity
 @Dao
 interface BodyDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(body: BodyEntity)
 
     @Update
@@ -19,6 +19,6 @@ interface BodyDao {
     @Query("DELETE FROM Body")
     suspend fun deleteAll()
 
-    @Query("SELECT * FROM Diet")
-    fun getAll(): LiveData<List<BodyEntity>>
+    @Query("SELECT * FROM Body")
+    suspend fun getAll(): List<BodyEntity>
 }

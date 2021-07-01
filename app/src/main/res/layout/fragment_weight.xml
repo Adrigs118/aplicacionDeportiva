@@ -4,6 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ui.weight.WeightFragment"
+    android:background="@mipmap/imagen_azul"
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
@@ -14,7 +15,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginRight="16dp"
         android:foreground="?selectableItemBackground"
-        card_view:cardBackgroundColor="@android:color/holo_blue_light"
+        card_view:cardBackgroundColor="@color/colorAzulClaro"
         card_view:cardCornerRadius="8dp"
         card_view:contentPadding="10dp">
 
@@ -34,7 +35,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="55dp"
-                    android:text="Sexo"
+                    android:text="@string/gender"
                     android:textColor="@color/cardview_light_background"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -46,7 +47,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="55dp"
-                    android:text="Masculino"
+                    android:text="@string/male"
                     android:textColor="@color/cardview_light_background"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -61,17 +62,6 @@
                 android:contentDescription="man_image"
                 android:src="@mipmap/face_male_human_body_icon_143216" />
 
-            <ImageView
-                android:id="@+id/imageView_woman"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:color="#4DB1B4A2"
-                android:contentDescription="woman_image"
-                android:src="@mipmap/face_head_female_woman_icon_143234" />
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -84,7 +74,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginRight="16dp"
         android:foreground="?selectableItemBackground"
-        card_view:cardBackgroundColor="@android:color/holo_blue_light"
+        card_view:cardBackgroundColor="@color/colorAzulClaro"
         card_view:cardCornerRadius="8dp"
         card_view:contentPadding="10dp">
 
@@ -108,7 +98,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="20dp"
-                        android:text="Altura"
+                        android:text="@string/height"
                         android:textColor="@color/cardview_light_background"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -121,7 +111,7 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="10dp"
-                        android:text="Peso"
+                        android:text="@string/weight"
                         android:textColor="@color/cardview_light_background"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -169,7 +159,7 @@
                             android:layout_marginTop="4dp"
                             android:layout_marginEnd="20dp"
                             android:gravity="center"
-                            android:text="Edad"
+                            android:text="@string/age"
                             android:textAlignment="center"
                             android:textColor="@color/cardview_light_background"
                             android:textSize="16sp"
@@ -191,10 +181,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginEnd="15dp"
-                        android:clickable="true"
                         android:layout_weight="1"
                         android:background="@android:color/holo_blue_bright"
-                        android:text="Calcular IMC"
+                        android:clickable="true"
+                        android:text="@string/calculate_imc"
                         android:textAlignment="center" />
 
                 </LinearLayout>
@@ -213,7 +203,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginRight="16dp"
         android:foreground="?selectableItemBackground"
-        card_view:cardBackgroundColor="@android:color/holo_blue_light"
+        card_view:cardBackgroundColor="@color/colorAzulClaro"
         card_view:cardCornerRadius="8dp"
         card_view:contentPadding="10dp">
 

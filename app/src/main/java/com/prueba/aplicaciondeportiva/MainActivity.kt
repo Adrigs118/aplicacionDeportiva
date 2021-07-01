@@ -3,12 +3,21 @@ package com.prueba.aplicaciondeportiva
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.prueba.aplicaciondeportiva.database.Dao.BodyDao
+import com.prueba.aplicaciondeportiva.database.Dao.ConfigDao
+import com.prueba.aplicaciondeportiva.database.Dao.DietDao
+import com.prueba.aplicaciondeportiva.database.Entity.*
+import com.prueba.aplicaciondeportiva.database.GymDatabase
+import com.prueba.aplicaciondeportiva.database.Repository.BodyRepository
+import com.prueba.aplicaciondeportiva.database.Repository.DietRepository
 import com.prueba.aplicaciondeportiva.utils.Utils
 import com.prueba.aplicaciondeportiva.viewModel.nutrition.DietsViewModel
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(){
 
@@ -35,5 +44,4 @@ class MainActivity : AppCompatActivity(){
     fun setActionBarTitle(title :String){
         supportActionBar?.title = title
     }
-
 }

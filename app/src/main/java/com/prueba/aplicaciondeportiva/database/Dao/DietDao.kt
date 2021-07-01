@@ -10,7 +10,7 @@ import com.prueba.aplicaciondeportiva.database.Entity.DietWithDay
 @Dao
 interface DietDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insert(diet: DietEntity)
 
     @Insert

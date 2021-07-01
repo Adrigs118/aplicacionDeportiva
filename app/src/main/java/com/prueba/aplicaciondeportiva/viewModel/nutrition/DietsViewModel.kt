@@ -14,6 +14,7 @@ import com.prueba.aplicaciondeportiva.ui.nutrition.DietsFragmentDirections
 import com.prueba.aplicaciondeportiva.utils.Utils
 import kotlinx.android.synthetic.main.prefab_diet.view.*
 import kotlinx.coroutines.launch
+import java.lang.Exception
 
 class DietsViewModel : ViewModel(){
 

@@ -10,6 +10,7 @@
     <string name="nutrition">Nutrición</string>
     <string name="trainingPlans">Planes de entrenamiento</string>
     <string name="diets">Dietas</string>
+    <string name="new_diet">Nueva dieta</string>
 
     <string name="monday">Lunes</string>
     <string name="tuesday">Martes</string>
@@ -34,7 +35,16 @@
     <string name="front_leg">Pierna delantera</string>
     <string name="back_leg">Pierna trasera</string>
 
+    <string name="gender">Sexo</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="height">Altura</string>
+    <string name="age">Edad</string>
+    <string name="calculate_imc">Calcular Imc</string>
+
     <string name="warning_diet_name">El campo nombre no puede estar vacío</string>
+    <string name="warning_body_fields_no_exist">Los campos no pueden esta vacíos</string>
+    <string name="warning_body_fields_no_valid">Campos no válidos</string>
     <string name="error_name_exist">El campo nombre ya existe</string>
     <string name="information_delete">¿Desea eliminar esta dieta?</string>
     <string name="error_bd">BD Error, Comprueba los campos</string>

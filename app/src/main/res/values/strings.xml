@@ -10,6 +10,7 @@
     <string name="nutrition">Nutrition</string>
     <string name="trainingPlans">Training plans</string>
     <string name="diets">Diets</string>
+    <string name="new_diet">New Diet</string>
 
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
@@ -25,6 +26,14 @@
     <string name="snack">Snack</string>
     <string name="dinner">Dinner</string>
 
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="height">Height</string>
+    <string name="age">Age</string>
+    <string name="calculate_imc">Calculate Imc</string>
+    <string name="imc" translatable="false">Imc</string>
+
     <string name="chest">Chest</string>
     <string name="espalda">Back</string>
     <string name="bicep">Bicep</string>
@@ -35,6 +44,8 @@
     <string name="back_leg">Back leg</string>
 
     <string name="warning_diet_name">The name field cannot be empty</string>
+    <string name="warning_body_fields_no_exist">The fields cannot be empty</string>
+    <string name="warning_body_fields_no_valid">Fields no valid</string>
     <string name="error_name_exist">The name field exist</string>
     <string name="information_delete">Do you want to eliminate this diet?</string>
     <string name="error_bd">BD Error, check fields</string>

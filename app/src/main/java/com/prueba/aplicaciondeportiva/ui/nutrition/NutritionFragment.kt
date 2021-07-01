@@ -30,7 +30,7 @@ class NutritionFragment : Fragment(){
     override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button_diets.setOnClickListener {
+        card_diets.setOnClickListener {
             viewModel.navToDiets(view)
         }
     }

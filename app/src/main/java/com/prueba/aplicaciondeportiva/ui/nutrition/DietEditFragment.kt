@@ -49,15 +49,16 @@ class DietEditFragment : Fragment(){
         if(nuevo){
             imageView_diet_delete.visibility = View.GONE
             imageView_diet_edit.visibility = View.GONE
+            val act : MainActivity = activity as MainActivity
+            act.setActionBarTitle(getString(R.string.new_diet))
         }
         else {
             imageView_diet_new.visibility = View.GONE
             editTextName.isEnabled = false
+            val act : MainActivity = activity as MainActivity
+            act.setActionBarTitle(diet.diet.name)
             initEditText()
         }
-
-        val act : MainActivity = activity as MainActivity
-        act.setActionBarTitle(diet.diet.name)
 
         imageView_diet_delete.setOnClickListener {
             val dialog = AlertDialog.Builder(this.context)

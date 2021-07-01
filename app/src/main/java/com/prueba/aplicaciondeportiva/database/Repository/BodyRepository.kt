@@ -1,11 +1,10 @@
 package com.prueba.aplicaciondeportiva.database.Repository
 
+import androidx.lifecycle.LiveData
 import com.prueba.aplicaciondeportiva.database.Dao.BodyDao
 import com.prueba.aplicaciondeportiva.database.Entity.BodyEntity
 
 class BodyRepository (private val dao: BodyDao){
-
-    val body = dao.getAll().value?.first()
 
     suspend fun insert(entity : BodyEntity){
         dao.insert(entity)
@@ -21,5 +20,9 @@ class BodyRepository (private val dao: BodyDao){
 
     suspend fun deleteAll(entity : BodyEntity) {
         dao.deleteAll()
+    }
+
+    suspend fun getAll() : List<BodyEntity>{
+        return dao.getAll()
     }
 }
