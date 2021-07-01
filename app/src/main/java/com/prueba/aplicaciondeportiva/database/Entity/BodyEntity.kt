@@ -11,8 +11,8 @@ import java.sql.Date
 data class BodyEntity (
     @PrimaryKey(autoGenerate = false) @ColumnInfo(name = "id") val id: Short,
     @ColumnInfo(name = "gender") val gender: Boolean,
-    @ColumnInfo(name = "age") val age: Int,
-    @ColumnInfo(name = "weight") val weight: Float,
-    @ColumnInfo(name = "height") val height: Int,
-    @ColumnInfo(name = "imc") val imc: Double
+    @ColumnInfo(name = "age") var age: Int,
+    @ColumnInfo(name = "weight") var weight: Float,
+    @ColumnInfo(name = "height") var height: Int,
+    @ColumnInfo(name = "imc") var imc: Double
 )
