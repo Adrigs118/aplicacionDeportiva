@@ -11,7 +11,7 @@ interface ConfigDao {
     suspend fun insert(config: ConfigEntity)
 
     @Update
-    suspend fun update(body: ConfigEntity)
+    suspend fun update(config: ConfigEntity)
 
     @Query("SELECT * FROM Config WHERE id = 0")
     suspend fun get(): ConfigEntity

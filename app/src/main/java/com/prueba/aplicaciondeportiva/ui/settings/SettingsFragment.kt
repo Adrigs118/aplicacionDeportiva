@@ -1,22 +1,23 @@
 package com.prueba.aplicaciondeportiva.ui.settings
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.prueba.aplicaciondeportiva.utils.Utils
+import com.prueba.aplicaciondeportiva.viewModel.SettingsViewModel
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 
 class SettingsFragment : Fragment(){
 
     private lateinit var settingsViewModel: SettingsViewModel
-    private var language: String = ""
+    private var init = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,12 +45,7 @@ class SettingsFragment : Fragment(){
             languages.adapter = adapter
         }
 
-
-        if(language.isNullOrEmpty()) {
-            language = "es"
-        }
-
-        if(language == "es"){
+        if(Utils.language == "es"){
             languages.setSelection(1)
         }
         else{
@@ -61,17 +57,18 @@ class SettingsFragment : Fragment(){
             }
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if(position == 1){
-                    language = "es"
+                    Utils.language = "es"
                 }
                 else{
-                    language = "en"
+                    Utils.language = "en"
                 }
-
-                Utils.setAppLocale(Utils.getApplicationContext(), language)
-
+                if(init) settingsViewModel.updateLanguage(get())
+                else init = true
             }
         }
     }
+
+    fun get() :Fragment {return this}
 
     fun reload(){
             /*val ft: FragmentTransaction = this.fragmentManager!!.beginTransaction()
@@ -79,17 +76,5 @@ class SettingsFragment : Fragment(){
             ft.attach(this)
             ft.commit()*/
     }
-
-    // region Getters&Setters
-
-    public fun getLanguage() :String{
-        return language
-    }
-
-    public fun setLanguage(language: String){
-        this.language = language
-    }
-
-    // endregion
 
 }

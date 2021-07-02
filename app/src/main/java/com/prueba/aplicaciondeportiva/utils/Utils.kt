@@ -11,6 +11,7 @@ class Utils() : AppCompatActivity(){
     companion object  {
 
         private var dietContext: DietWithDay? = null
+        public var language : String = "en"
 
         private lateinit  var context: Context
 

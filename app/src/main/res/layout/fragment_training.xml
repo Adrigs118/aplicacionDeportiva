@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ui.training.TrainingFragment"
+    android:background="@mipmap/fondo_green"
     android:layout_height="match_parent">
 
     <Space

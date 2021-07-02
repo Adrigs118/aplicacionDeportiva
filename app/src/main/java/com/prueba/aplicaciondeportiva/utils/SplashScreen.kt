@@ -16,6 +16,7 @@ import com.prueba.aplicaciondeportiva.database.Entity.*
 import com.prueba.aplicaciondeportiva.database.GymDatabase
 import com.prueba.aplicaciondeportiva.database.Repository.DietRepository
 import kotlinx.coroutines.launch
+import java.util.*
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
@@ -54,14 +55,26 @@ class SplashScreen : AppCompatActivity() {
 
     fun initBd(){
         lifecycleScope.launch {
+            var lang = Locale.getDefault().displayLanguage
             val aux = configRepository.get()
+
+            if (lang == "Spanish") lang = "es"
+            else lang = "en"
+
             if (aux == null){
-                configRepository.insert(ConfigEntity(0, true))
+                configRepository.insert(ConfigEntity(0, true, lang))
                 dietRepository.insert(firstDiet())
                 dietRepository.insert(secondDiet())
                 bodyRepository.insert(firstBody())
+                Utils.language = lang
+            }
+            else {
+                val language = configRepository.get().language
+                Utils.language = language
+                Utils.setAppLocale(baseContext, language)
             }
         }
+
     }
 
     fun firstBody() : BodyEntity {

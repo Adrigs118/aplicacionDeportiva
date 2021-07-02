@@ -7,14 +7,17 @@ import androidx.room.RoomDatabase
 import com.prueba.aplicaciondeportiva.database.Dao.BodyDao
 import com.prueba.aplicaciondeportiva.database.Dao.ConfigDao
 import com.prueba.aplicaciondeportiva.database.Dao.DietDao
+import com.prueba.aplicaciondeportiva.database.Dao.NotificationDao
 import com.prueba.aplicaciondeportiva.database.Entity.*
 
 @Database(entities = [DietEntity::class,
-    DietDayEntity::class, BodyEntity::class, ConfigEntity::class], version = 1)
+    DietDayEntity::class, BodyEntity::class, ConfigEntity::class, NotificationEntity::class],
+    version = 1)
 abstract class GymDatabase : RoomDatabase() {
     abstract  fun dietDao() : DietDao
     abstract  fun bodyDao() : BodyDao
     abstract  fun configDao() : ConfigDao
+    abstract  fun notificationDao() : NotificationDao
 
     companion object {
         const val DATABASE_NAME = "gym_database"

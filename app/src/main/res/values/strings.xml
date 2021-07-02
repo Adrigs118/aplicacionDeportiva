@@ -35,7 +35,7 @@
     <string name="imc" translatable="false">Imc</string>
 
     <string name="chest">Chest</string>
-    <string name="espalda">Back</string>
+    <string name="back">Back</string>
     <string name="bicep">Bicep</string>
     <string name="tricep">Tricep</string>
     <string name="shoulder">Shoulder</string>
