@@ -25,8 +25,8 @@ class StretchtingPartFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         card_chest.setOnClickListener {
-            val dialog  = StretchtingDialogFragment()
-            dialog.show(childFragmentManager , "Aux")
+            val action = StretchtingPartFragmentDirections.action_stretchtingPartFragment_to_stretchtingDialogFragment()
+            findNavController().navigate(action)
         }
     }
 }

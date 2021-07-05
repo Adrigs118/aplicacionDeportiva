@@ -11,6 +11,9 @@
     <string name="trainingPlans">Training plans</string>
     <string name="diets">Diets</string>
     <string name="new_diet">New Diet</string>
+    <string name="my_training">My Training</string>
+    <string name="trainings">Trainings</string>
+
 
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>

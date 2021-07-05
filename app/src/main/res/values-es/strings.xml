@@ -11,6 +11,8 @@
     <string name="trainingPlans">Planes de entrenamiento</string>
     <string name="diets">Dietas</string>
     <string name="new_diet">Nueva dieta</string>
+    <string name="my_training">Mi rutina</string>
+    <string name="trainings">Rutinas</string>
 
     <string name="monday">Lunes</string>
     <string name="tuesday">Martes</string>

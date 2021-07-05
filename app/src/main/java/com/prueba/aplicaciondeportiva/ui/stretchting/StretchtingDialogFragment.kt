@@ -1,28 +1,33 @@
 package com.prueba.aplicaciondeportiva.ui.stretchting
 
-import android.app.AlertDialog
-import android.app.Dialog
-import android.content.DialogInterface
 import android.os.Bundle
-import androidx.fragment.app.DialogFragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_stretchting_description.*
+import android.webkit.WebChromeClient
+import android.webkit.WebSettings.PluginState
 
-class StretchtingDialogFragment : DialogFragment(){
+class StretchtingDialogFragment : Fragment(){
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        return activity?.let {
-            // Use the Builder class for convenient dialog construction
-            val builder = AlertDialog.Builder(it)
-            builder.setMessage("Prueba")
-                .setPositiveButton("SI",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        // FIRE ZE MISSILES!
-                    })
-                .setNegativeButton("NO",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        // User cancelled the dialog
-                    })
-            // Create the AlertDialog object and return it
-            builder.create()
-        } ?: throw IllegalStateException("Activity cannot be null")
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val root = inflater.inflate(com.prueba.aplicaciondeportiva.R.layout.fragment_stretchting_description, container, false)
+        return root
+    }
+
+    override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val videoID = "W0M0yfN8Tkc"
+
+        webView_video.settings.javaScriptEnabled = true
+        webView_video.settings.pluginState = PluginState.ON
+
+        webView_video.loadUrl("https://www.youtube.com/embed/$videoID?autoplay=1&vq=small")
+        webView_video.webChromeClient = WebChromeClient()
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     tools:context=".ui.home.HomeFragment"
-    android:background="@mipmap/fondogris"
+    android:background="@mipmap/fondo_setting"
     android:paddingTop="?attr/actionBarSize"
     android:paddingBottom="?attr/actionBarSize"
     android:layout_height="match_parent">

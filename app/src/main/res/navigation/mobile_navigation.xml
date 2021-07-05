@@ -125,6 +125,13 @@
         <argument
             android:name="BODYPART"
             app:argType="string" />
+        <action
+            android:id="@+id/action_stretchtingPartFragment_to_stretchtingDialogFragment"
+            app:destination="@id/stretchtingDialogFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/dietEditFragment"
@@ -134,5 +141,9 @@
             android:name="TIPO"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/stretchtingDialogFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.stretchting.StretchtingDialogFragment"
+        android:label="StretchtingDialogFragment" />
 
 </navigation>
