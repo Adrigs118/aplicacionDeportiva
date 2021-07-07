@@ -5,12 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.prueba.aplicaciondeportiva.R
+import com.prueba.aplicaciondeportiva.viewModel.Strechting.StrechtingPartViewModel
+import com.prueba.aplicaciondeportiva.viewModel.Strechting.StrechtingViewModel
 import kotlinx.android.synthetic.main.fragment_stretchting.card_chest
 import kotlinx.android.synthetic.main.fragment_stretchting_part.*
 
 class StretchtingPartFragment : Fragment(){
+
+    private lateinit var viewModel: StrechtingPartViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,6 +23,7 @@ class StretchtingPartFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_stretchting_part, container, false)
+        viewModel = ViewModelProviders.of(this).get(StrechtingPartViewModel::class.java)
         return root
     }
 
@@ -25,8 +31,7 @@ class StretchtingPartFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         card_chest.setOnClickListener {
-            val action = StretchtingPartFragmentDirections.action_stretchtingPartFragment_to_stretchtingDialogFragment()
-            findNavController().navigate(action)
+            viewModel.navigate(view)
         }
     }
 }

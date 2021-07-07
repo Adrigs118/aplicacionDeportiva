@@ -3,6 +3,7 @@ package com.prueba.aplicaciondeportiva.utils
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import com.prueba.aplicaciondeportiva.database.Entity.DietWithDay
+import com.prueba.aplicaciondeportiva.database.Entity.StrechtingEntity
 import java.util.*
 
 
@@ -11,6 +12,7 @@ class Utils() : AppCompatActivity(){
     companion object  {
 
         private var dietContext: DietWithDay? = null
+        var strechtingContext: StrechtingEntity? = null
         public var language : String = "en"
 
         private lateinit  var context: Context

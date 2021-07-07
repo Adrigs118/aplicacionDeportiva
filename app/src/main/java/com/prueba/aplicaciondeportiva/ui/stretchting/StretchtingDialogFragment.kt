@@ -8,8 +8,13 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_stretchting_description.*
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings.PluginState
+import androidx.lifecycle.ViewModelProviders
+import com.prueba.aplicaciondeportiva.utils.Utils
+import com.prueba.aplicaciondeportiva.viewModel.Strechting.StrechtingDialogViewModel
 
 class StretchtingDialogFragment : Fragment(){
+
+    private lateinit var viewModel: StrechtingDialogViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,17 +22,13 @@ class StretchtingDialogFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(com.prueba.aplicaciondeportiva.R.layout.fragment_stretchting_description, container, false)
+        viewModel = ViewModelProviders.of(this).get(StrechtingDialogViewModel::class.java)
         return root
     }
 
     override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val videoID = "W0M0yfN8Tkc"
-
-        webView_video.settings.javaScriptEnabled = true
-        webView_video.settings.pluginState = PluginState.ON
-
-        webView_video.loadUrl("https://www.youtube.com/embed/$videoID?autoplay=1&vq=small")
-        webView_video.webChromeClient = WebChromeClient()
+        viewModel.initVideo(webView_video)
     }
+
 }

@@ -5,11 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.prueba.aplicaciondeportiva.R
+import com.prueba.aplicaciondeportiva.viewModel.Strechting.StrechtingViewModel
 import kotlinx.android.synthetic.main.fragment_stretchting.*
 
 class StretchtingFragment : Fragment(){
+
+    private lateinit var viewModel: StrechtingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,6 +21,7 @@ class StretchtingFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_stretchting, container, false)
+        viewModel = ViewModelProviders.of(this).get(StrechtingViewModel::class.java)
         return root
     }
 
@@ -24,43 +29,35 @@ class StretchtingFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         card_chest.setOnClickListener {
-            val action = StretchtingFragmentDirections.action_navigation_stretchting_to_stretchtingPartFragment("CHEST")
-            findNavController().navigate(action)
+            viewModel.navigate(view,"CHEST")
         }
 
         card_back.setOnClickListener {
-            val action = StretchtingFragmentDirections.action_navigation_stretchting_to_stretchtingPartFragment("BACK")
-            findNavController().navigate(action)
+            viewModel.navigate(view,"BACK")
         }
 
         card_biceps.setOnClickListener {
-            val action = StretchtingFragmentDirections.action_navigation_stretchting_to_stretchtingPartFragment("BICEP")
-            findNavController().navigate(action)
+            viewModel.navigate(view,"BICEP")
         }
 
         card_triceps.setOnClickListener {
-            val action = StretchtingFragmentDirections.action_navigation_stretchting_to_stretchtingPartFragment("TRICEP")
-            findNavController().navigate(action)
+            viewModel.navigate(view,"TRICEP")
         }
 
         card_shoulder.setOnClickListener {
-            val action = StretchtingFragmentDirections.action_navigation_stretchting_to_stretchtingPartFragment("SHOULDER")
-            findNavController().navigate(action)
+            viewModel.navigate(view,"SHOULDER")
         }
 
         card_abs.setOnClickListener {
-            val action = StretchtingFragmentDirections.action_navigation_stretchting_to_stretchtingPartFragment("ABS")
-            findNavController().navigate(action)
+            viewModel.navigate(view,"ABS")
         }
 
         card_frontLeg.setOnClickListener {
-            val action = StretchtingFragmentDirections.action_navigation_stretchting_to_stretchtingPartFragment("FRONTLEG")
-            findNavController().navigate(action)
+            viewModel.navigate(view,"FRONTLEG")
         }
 
         card_backLeg.setOnClickListener {
-            val action = StretchtingFragmentDirections.action_navigation_stretchting_to_stretchtingPartFragment("BACKLEG")
-            findNavController().navigate(action)
+            viewModel.navigate(view,"BACKLEG")
         }
     }
 }
