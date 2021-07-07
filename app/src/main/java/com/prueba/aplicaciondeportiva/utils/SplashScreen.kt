@@ -39,6 +39,7 @@ class SplashScreen : AppCompatActivity() {
         configRepository = GymDatabase.getInstance(applicationContext)!!.configDao()
         dietRepository = DietRepository(GymDatabase.getInstance(applicationContext)!!.dietDao())
         bodyRepository = GymDatabase.getInstance(applicationContext)!!.bodyDao()
+        strechtingRepository = GymDatabase.getInstance(applicationContext)!!.strechtingDao()
 
         val backgroundImage : ImageView = findViewById(R.id.SplashScreenImage)
         val rotateAnimation = AnimationUtils.loadAnimation(this,
@@ -64,16 +65,20 @@ class SplashScreen : AppCompatActivity() {
             else lang = "en"
 
             if (aux == null){
-                configRepository.insert(ConfigEntity(0, true, lang))
+                configRepository.insert(ConfigEntity(0, true, true, lang))
                 dietRepository.insert(firstDiet())
                 dietRepository.insert(secondDiet())
                 bodyRepository.insert(firstBody())
                 strechtingRepository.insert(firstStrechting())
                 Utils.language = lang
+                Utils.notifications = true
             }
             else {
-                val language = configRepository.get().language
+                val config = configRepository.get()
+                val language = config.language
+                val notifications = config.notifications
                 Utils.language = language
+                Utils.notifications = notifications
                 Utils.setAppLocale(baseContext, language)
             }
         }

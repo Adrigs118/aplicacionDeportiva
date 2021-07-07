@@ -52,6 +52,13 @@ class SettingsFragment : Fragment(){
             languages.setSelection(0)
         }
 
+        switch_noti.isChecked = Utils.notifications
+
+        switch_noti.setOnClickListener{
+            Utils.notifications = switch_noti.isChecked
+            settingsViewModel.update_noti(switch_noti.isChecked)
+        }
+
         languages.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }

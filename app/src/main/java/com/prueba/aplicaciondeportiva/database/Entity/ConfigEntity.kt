@@ -8,5 +8,6 @@ import androidx.room.PrimaryKey
 data class ConfigEntity (
     @PrimaryKey(autoGenerate = false) @ColumnInfo(name = "id") val id: Short,
     @ColumnInfo(name = "init") val init: Boolean,
+    @ColumnInfo(name = "notifications") var notifications: Boolean,
     @ColumnInfo(name = "language") var language: String
 )

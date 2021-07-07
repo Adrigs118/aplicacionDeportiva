@@ -14,6 +14,7 @@ class Utils() : AppCompatActivity(){
         private var dietContext: DietWithDay? = null
         var strechtingContext: StrechtingEntity? = null
         public var language : String = "en"
+        var notifications : Boolean = false
 
         private lateinit  var context: Context
 

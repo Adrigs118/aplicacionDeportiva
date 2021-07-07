@@ -1,6 +1,7 @@
 package com.prueba.aplicaciondeportiva.database.Dao
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 import com.prueba.aplicaciondeportiva.database.Entity.BodyEntity
 import com.prueba.aplicaciondeportiva.database.Entity.NotificationEntity

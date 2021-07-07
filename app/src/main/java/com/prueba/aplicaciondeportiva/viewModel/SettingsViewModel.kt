@@ -25,12 +25,21 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
         }
     }
 
+    fun update_noti(notification :Boolean) {
+        viewModelScope.launch {
+            val update = repository.get()
+            update.notifications = notification
+            repository.update(update)
+        }
+    }
+
     fun updateLanguage(fragment : Fragment){
         val context = Utils.getApplicationContext()
         Utils.setAppLocale(context, Utils.language)
         updateMainActivity(fragment)
         update(Utils.language)
     }
+
 
     fun updateMainActivity(fragmentSetting: Fragment){
         viewModelScope.launch {
