@@ -77,11 +77,4 @@ class SettingsFragment : Fragment(){
 
     fun get() :Fragment {return this}
 
-    fun reload(){
-            /*val ft: FragmentTransaction = this.fragmentManager!!.beginTransaction()
-            ft.detach(this)
-            ft.attach(this)
-            ft.commit()*/
-    }
-
 }
