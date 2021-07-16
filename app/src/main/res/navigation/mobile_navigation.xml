@@ -88,7 +88,15 @@
         android:id="@+id/navigation_training"
         android:name="com.prueba.aplicaciondeportiva.ui.training.TrainingFragment"
         android:label="@string/trainingPlans"
-        tools:layout="@layout/fragment_training" />
+        tools:layout="@layout/fragment_training" >
+        <action
+            android:id="@+id/action_navigation_training_to_trainingsFragment"
+            app:destination="@id/trainingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_weight"
@@ -145,5 +153,9 @@
         android:id="@+id/stretchtingDialogFragment"
         android:name="com.prueba.aplicaciondeportiva.ui.stretchting.StretchtingDialogFragment"
         android:label="StretchtingDialogFragment" />
+    <fragment
+        android:id="@+id/trainingsFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.training.TrainingsFragment"
+        android:label="TrainingsFragment" />
 
 </navigation>

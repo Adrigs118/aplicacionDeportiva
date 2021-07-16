@@ -13,6 +13,7 @@ import com.prueba.aplicaciondeportiva.R
 import com.prueba.aplicaciondeportiva.database.Dao.BodyDao
 import com.prueba.aplicaciondeportiva.database.Dao.ConfigDao
 import com.prueba.aplicaciondeportiva.database.Dao.StrechtingDao
+import com.prueba.aplicaciondeportiva.database.Dao.TrainingDao
 import com.prueba.aplicaciondeportiva.database.Entity.*
 import com.prueba.aplicaciondeportiva.database.GymDatabase
 import com.prueba.aplicaciondeportiva.database.Repository.DietRepository
@@ -26,6 +27,7 @@ class SplashScreen : AppCompatActivity() {
     lateinit var  dietRepository : DietRepository
     lateinit var  bodyRepository : BodyDao
     lateinit var  strechtingRepository : StrechtingDao
+    lateinit var  trainingRepository : TrainingDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,7 @@ class SplashScreen : AppCompatActivity() {
         dietRepository = DietRepository(GymDatabase.getInstance(applicationContext)!!.dietDao())
         bodyRepository = GymDatabase.getInstance(applicationContext)!!.bodyDao()
         strechtingRepository = GymDatabase.getInstance(applicationContext)!!.strechtingDao()
+        trainingRepository = GymDatabase.getInstance(applicationContext)!!.trainingDao()
 
         val backgroundImage : ImageView = findViewById(R.id.SplashScreenImage)
         val rotateAnimation = AnimationUtils.loadAnimation(this,
@@ -70,6 +73,7 @@ class SplashScreen : AppCompatActivity() {
                 dietRepository.insert(secondDiet())
                 bodyRepository.insert(firstBody())
                 strechtingRepository.insert(firstStrechting())
+                trainingRepository.insert(firstTraining())
                 Utils.language = lang
                 Utils.notifications = true
             }
@@ -93,6 +97,12 @@ class SplashScreen : AppCompatActivity() {
     fun firstStrechting() : StrechtingEntity {
         val strechtingEntity = StrechtingEntity(0, "front_leg", getString(R.string.strechting_desc1),0,0,0.0F, "W0M0yfN8Tkc" )
         return strechtingEntity
+    }
+
+    fun firstTraining() : TrainingEntity {
+        val trainingEntity = TrainingEntity(0, true,"Cuerpo Completo",  "Entrenamiento del cuerpo completo",
+            3, 3, "Completo")
+        return trainingEntity
     }
 
     fun firstDiet() : DietWithDay {

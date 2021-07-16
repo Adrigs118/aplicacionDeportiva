@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Diet")
 data class DietEntity (
     @PrimaryKey(autoGenerate = false) @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "description") val description: String,
+    @ColumnInfo(name = "description") var description: String,
     @ColumnInfo(name = "tag") val tag: String
 )
 

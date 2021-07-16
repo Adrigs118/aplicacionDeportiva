@@ -59,6 +59,11 @@
 
     <string name="strechting_desc1">Estirar</string>
 
+    <string name="medium">Intermedio</string>
+    <string name="easy">Fácil</string>
+    <string name="hard">Difícil</string>
+    <string name="days">Días</string>
+
     <string-array name="languages_array">
         <item>English</item>
         <item>Español</item>

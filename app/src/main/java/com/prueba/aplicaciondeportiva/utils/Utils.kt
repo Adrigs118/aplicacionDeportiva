@@ -30,6 +30,11 @@ class Utils() : AppCompatActivity(){
             Companion.context = context
         }
 
+        fun getStringByIdName(context: Context, idName: String): String {
+            val res = context.getResources()
+            return res.getString(res.getIdentifier(idName, "string", context.getPackageName()))
+        }
+
         @Suppress("DEPRECATION")
         fun setAppLocale(context: Context, language: String) {
             val locale = Locale(language)

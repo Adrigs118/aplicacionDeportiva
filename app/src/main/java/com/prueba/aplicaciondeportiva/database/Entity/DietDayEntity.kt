@@ -6,7 +6,7 @@ import androidx.room.*
 data class DietDayEntity (
     @ColumnInfo(name = "day") val day: String,
     @ColumnInfo(name = "diet") val diet: String,
-    @ColumnInfo(name = "breakfast") val breakfast: String,
+    @ColumnInfo(name = "breakfast") var breakfast: String,
     @ColumnInfo(name = "lunch") val lunch: String,
     @ColumnInfo(name = "meal") val meal: String,
     @ColumnInfo(name = "snack") val snack: String,
