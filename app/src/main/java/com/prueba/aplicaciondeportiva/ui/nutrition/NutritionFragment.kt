@@ -33,5 +33,9 @@ class NutritionFragment : Fragment(){
         card_diets.setOnClickListener {
             viewModel.navToDiets(view)
         }
+
+        card_calories.setOnClickListener {
+            viewModel.navToCalories(view)
+        }
     }
 }

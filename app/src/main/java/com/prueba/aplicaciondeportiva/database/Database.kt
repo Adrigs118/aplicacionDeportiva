@@ -8,15 +8,17 @@ import com.prueba.aplicaciondeportiva.database.Dao.*
 import com.prueba.aplicaciondeportiva.database.Entity.*
 
 @Database(entities = [DietEntity::class, StrechtingEntity::class, TrainingEntity::class,
-    DietDayEntity::class, BodyEntity::class, ConfigEntity::class, NotificationEntity::class],
+    DietDayEntity::class, BodyEntity::class, ConfigEntity::class, ExerciseEntity::class,
+    NotificationEntity::class],
     version = 1)
 abstract class GymDatabase : RoomDatabase() {
-    abstract  fun dietDao() : DietDao
-    abstract  fun bodyDao() : BodyDao
-    abstract  fun configDao() : ConfigDao
-    abstract  fun notificationDao() : NotificationDao
+    abstract fun dietDao() : DietDao
+    abstract fun bodyDao() : BodyDao
+    abstract fun configDao() : ConfigDao
+    abstract fun notificationDao() : NotificationDao
     abstract fun strechtingDao() : StrechtingDao
     abstract fun trainingDao() : TrainingDao
+    abstract fun exerciseDao() : ExerciseDao
 
     companion object {
         const val DATABASE_NAME = "gym_database"

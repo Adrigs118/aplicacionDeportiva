@@ -18,8 +18,10 @@ import java.lang.Exception
 
 class DietsViewModel : ViewModel(){
 
+    //region variables
     val repository = DietRepository(GymDatabase.getInstance(Utils.getApplicationContext())!!.dietDao())
     val allDiets = repository.diets
+    //endregion
 
     //region events
     fun navigateToEdit(view : View, tipo : String){
@@ -33,10 +35,13 @@ class DietsViewModel : ViewModel(){
     }
     //endregion
 
+    //region funcs
     fun getAllDietsObservers() : LiveData<List<DietWithDay>> {
         return allDiets
     }
+    //endregion
 
+    //region RecyclerViewAdapter InnerClass
     inner class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
         var items : ArrayList<DietWithDay> = ArrayList<DietWithDay>()
@@ -86,11 +91,6 @@ class DietsViewModel : ViewModel(){
         }
 
     }
-
-
-
-
-
-
+    //endregion
 
 }

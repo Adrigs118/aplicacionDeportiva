@@ -27,5 +27,10 @@ class TrainingViewModel : ViewModel(){
         val action = TrainingFragmentDirections.action_navigation_training_to_trainingsFragment()
         view.findNavController().navigate(action)
     }
+
+    fun navigateToExercises(view : View){
+        val action = TrainingFragmentDirections.action_navigation_training_to_exercisePartFragment()
+        view.findNavController().navigate(action)
+    }
     //endregion
 }

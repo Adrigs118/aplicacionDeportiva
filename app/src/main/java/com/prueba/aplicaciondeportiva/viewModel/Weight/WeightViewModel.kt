@@ -48,14 +48,14 @@ class WeightViewModel :ViewModel() {
         }
     }
 
-    fun checkFields(fm :FragmentManager, warning : String, warning2: String) :Boolean{
-            if (body.get(0).weight == 0.0F || body[0].height == 0){
+    fun checkFields(fm :FragmentManager, warning : String, warning2: String, height : EditText, weight: EditText) :Boolean{
+            if (weight.text.toString().toFloat() == 0.0F || height.text.toString().toInt() == 0){
                 val dialog = DialogAux(DialogAux.TypeDialog.WARNING, warning, false)
                 dialog.show(fm, "warningDialog")
                 return false
             }
-            else if (body[0].weight < 20.0 || body[0].weight > 350.0 ||
-                    body[0].height < 60 || body[0].height > 240){
+            else if (weight.text.toString().toFloat() < 20.0 || weight.text.toString().toFloat() > 350.0 ||
+                height.text.toString().toInt() < 60 || height.text.toString().toInt() > 240){
                 val dialog = DialogAux(DialogAux.TypeDialog.WARNING, warning2, false)
                 dialog.show(fm, "warningDialog")
                 return false
@@ -102,27 +102,12 @@ class WeightViewModel :ViewModel() {
     }
 
     @SuppressLint("NewApi")
-    fun addImc(graph: GraphView, weight: String, height: String){
+    fun addImc(graph: GraphView, height: String, weight: String){
 
-        val series : LineGraphSeries<DataPoint> = LineGraphSeries()
-        series.color = Color.RED
-        series.title = "Imc"
-        series.isDrawDataPoints = true
-        //val serie = graph.series[0]
         val y : Double = (weight.toDouble() / (height.toDouble() /100).pow(2))
         val date = Date().time
-        val dateAux = (Date().time )- 10000000000
-        println("$date y $dateAux")
-        println(Date(date).toString() + Date(dateAux).toString())
 
-        //serie.appendData(DataPoint(dateAux!!.,22.1), true, 5)
-
-        series.appendData(DataPoint(Date(dateAux),y), true, 5)
-        series.appendData(DataPoint(Date(date),y + 6.1), true, 5)
-        graph.addSeries(series)
-        graph.viewport.setMinX((dateAux.toDouble()))
-        graph.viewport.setMaxX((date.toDouble()))
-
+        (graph.series[0] as LineGraphSeries<DataPoint>).appendData(DataPoint(Date(date), y - 7), true, 5)
         graph.title = "Imc : " + String.format("%.2f", y)
         body[0].imc = y
         update(body[0])
@@ -132,7 +117,18 @@ class WeightViewModel :ViewModel() {
 
         val series : LineGraphSeries<DataPoint> = LineGraphSeries()
 
+        series.color = Color.RED
+        series.title = "Imc"
+        series.isDrawDataPoints = true
 
+        val dateAuxpre = (Date().time )- 1000000000
+        val dateAuxpre2 = (Date().time ) - 500000000
+
+        series.appendData(DataPoint(Date(dateAuxpre),20.0), true, 5)
+        series.appendData(DataPoint(Date(dateAuxpre2),25.0), true, 5)
+        graph.addSeries(series)
+
+        graph.title = "Imc : " + String.format("%.2f", 25.0)
 
         graph.gridLabelRenderer.labelFormatter = object : DefaultLabelFormatter() {
             override fun formatLabel(value: Double, isValueX: Boolean): String {
@@ -150,7 +146,7 @@ class WeightViewModel :ViewModel() {
 
         graph.titleTextSize = 60.0F
         graph.titleColor = Color.WHITE
-        graph.viewport.isScalable = true
+        graph.viewport.isScalable = false
         graph.viewport.isScrollable = true
     }
 

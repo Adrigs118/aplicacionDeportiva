@@ -68,6 +68,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigation_nutrition_to_caloriesFragment"
+            app:destination="@id/caloriesFragment" />
     </fragment>
 
     <fragment
@@ -96,6 +99,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigation_training_to_exercisePartFragment"
+            app:destination="@id/exercisePartFragment" />
     </fragment>
 
     <fragment
@@ -156,6 +162,34 @@
     <fragment
         android:id="@+id/trainingsFragment"
         android:name="com.prueba.aplicaciondeportiva.ui.training.TrainingsFragment"
-        android:label="TrainingsFragment" />
+        android:label="TrainingsFragment" >
+        <action
+            android:id="@+id/action_trainingsFragment_to_trainingExampleFragment"
+            app:destination="@id/trainingExampleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingExampleFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.training.TrainingExampleFragment"
+        android:label="TrainingExampleFragment" >
+        <action
+            android:id="@+id/action_trainingExampleFragment_to_exerciseDialogFragment"
+            app:destination="@id/exerciseDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseDialogFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.training.ExerciseDialogFragment"
+        android:label="ExerciseDialogFragment" />
+    <fragment
+        android:id="@+id/exercisePartFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.training.ExercisePartFragment"
+        android:label="ExercisePartFragment" >
+        <action
+            android:id="@+id/action_exercisePartFragment_to_exerciseDialogFragment"
+            app:destination="@id/exerciseDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caloriesFragment"
+        android:name="com.prueba.aplicaciondeportiva.ui.nutrition.CaloriesFragment"
+        android:label="CaloriesFragment" />
 
 </navigation>

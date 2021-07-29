@@ -3,7 +3,9 @@ package com.prueba.aplicaciondeportiva.utils
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import com.prueba.aplicaciondeportiva.database.Entity.DietWithDay
+import com.prueba.aplicaciondeportiva.database.Entity.ExerciseEntity
 import com.prueba.aplicaciondeportiva.database.Entity.StrechtingEntity
+import com.prueba.aplicaciondeportiva.database.Entity.TrainingEntity
 import java.util.*
 
 
@@ -13,6 +15,8 @@ class Utils() : AppCompatActivity(){
 
         private var dietContext: DietWithDay? = null
         var strechtingContext: StrechtingEntity? = null
+        var exerciseContext: ExerciseEntity? = null
+        var trainingContext: TrainingEntity? = null
         public var language : String = "en"
         var notifications : Boolean = false
 

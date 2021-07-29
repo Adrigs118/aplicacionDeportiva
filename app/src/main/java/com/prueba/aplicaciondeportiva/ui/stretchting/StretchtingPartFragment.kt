@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import com.prueba.aplicaciondeportiva.MainActivity
 import com.prueba.aplicaciondeportiva.R
 import com.prueba.aplicaciondeportiva.viewModel.Strechting.StrechtingPartViewModel
 import com.prueba.aplicaciondeportiva.viewModel.Strechting.StrechtingViewModel
@@ -29,6 +30,8 @@ class StretchtingPartFragment : Fragment(){
 
     override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val act : MainActivity = activity as MainActivity
+        act.setActionBarTitle(getString(R.string.front_leg))
 
         card_chest.setOnClickListener {
             viewModel.navigate(view)

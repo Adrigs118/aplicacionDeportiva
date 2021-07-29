@@ -15,6 +15,7 @@ import com.prueba.aplicaciondeportiva.database.GymDatabase
 import com.prueba.aplicaciondeportiva.database.Repository.DietRepository
 import com.prueba.aplicaciondeportiva.database.Repository.TrainingRepository
 import com.prueba.aplicaciondeportiva.ui.nutrition.DietsFragmentDirections
+import com.prueba.aplicaciondeportiva.ui.training.TrainingsFragmentDirections
 import com.prueba.aplicaciondeportiva.utils.Utils
 import kotlinx.android.synthetic.main.prefab_diet.view.*
 import kotlinx.android.synthetic.main.prefab_training.view.*
@@ -29,7 +30,7 @@ class TrainingsViewModel : ViewModel(){
 
     //region events
     fun navigateToDescription(view : View){
-        val action = DietsFragmentDirections.action_dietsFragment_to_dietFragment()
+        val action = TrainingsFragmentDirections.action_trainingsFragment_to_trainingExampleFragment()
         view.findNavController().navigate(action)
     }
     //endregion
@@ -70,7 +71,7 @@ class TrainingsViewModel : ViewModel(){
             fun bind(data: TrainingEntity) {
                 textViewName.text = data.name
                 textViewDif.text = difToString(data.difficult)
-                textViewDif.setBackgroundColor(difColor(data.difficult))
+                //textViewDif.setBackgroundColor(difColor(data.difficult))
                 textViewDays.text = data.days.toString() + " " + Utils.getStringByIdName(Utils.getApplicationContext(), "days")
                 textViewType.text = data.target
             }
@@ -82,18 +83,19 @@ class TrainingsViewModel : ViewModel(){
             }
 
             fun difColor(dif : Int) : Int{
-                if (dif == 1) return Color.GREEN
-                else if (dif == 2) return Color.YELLOW
-                else return Color.RED
+               // if (dif == 1) return Color.GREEN
+               // else if (dif == 2) return Color.YELLOW
+               // else return Color.RED
+                return 0
             }
 
-            //init {
-                /*itemView.setOnClickListener {
-                    Utils.setTrainingContext(items!![position])
+            init {
+                itemView.setOnClickListener {
+                    Utils.trainingContext = items!![position]
                     navigateToDescription(itemView)
-                }*/
+                }
 
-            //}
+            }
         }
 
     }

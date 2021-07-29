@@ -34,5 +34,10 @@ class TrainingFragment : Fragment(){
             viewModel.navigateToTrainings(view)
         }
 
+        card_exercise.setOnClickListener {
+            viewModel.navigateToExercises(view)
+        }
+
+
     }
 }

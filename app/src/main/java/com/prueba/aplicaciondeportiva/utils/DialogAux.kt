@@ -33,15 +33,15 @@ class DialogAux (val typeDialog : TypeDialog, val message : String, val positive
 
             if (typeDialog == TypeDialog.WARNING) {
                 builder.setIcon(R.mipmap.dialog_warning)
-                builder.setTitle("Warning")
+                builder.setTitle(getString(R.string.warning))
             }
             else if(typeDialog == TypeDialog.ERROR) {
                 builder.setIcon(R.mipmap.dialog_error)
-                builder.setTitle("Error")
+                builder.setTitle(getString(R.string.Error))
             }
             else {
                 builder.setIcon(R.mipmap.dialog_information)
-                builder.setTitle("Information")
+                builder.setTitle(getString(R.string.information))
             }
 
             // Create the AlertDialog object and return it

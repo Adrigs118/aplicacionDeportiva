@@ -8,38 +8,6 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_my_training"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:foreground="?selectableItemBackground"
-        app:cardBackgroundColor="@color/colorAzulClaro2"
-        app:cardCornerRadius="8dp"
-        app:contentPadding="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView_my_training"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="15dp"
-                android:text="@string/my_training"
-                android:textAlignment="center"
-                android:textColor="@color/cardview_light_background"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/card_trainings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -94,38 +62,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="15dp"
                 android:text="Ejercicios"
-                android:textAlignment="center"
-                android:textColor="@color/cardview_light_background"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_remember"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:foreground="?selectableItemBackground"
-        app:cardBackgroundColor="@color/colorAzulClaro2"
-        app:cardCornerRadius="8dp"
-        app:contentPadding="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView_remember"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="15dp"
-                android:text="Recordatorio"
                 android:textAlignment="center"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="24sp"

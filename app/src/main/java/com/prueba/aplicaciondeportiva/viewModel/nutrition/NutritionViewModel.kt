@@ -11,4 +11,9 @@ class NutritionViewModel : ViewModel(){
         val action = NutritionFragmentDirections.action_navigation_nutrition_to_dietsFragment()
         view.findNavController().navigate(action)
     }
+
+    fun navToCalories(view : View){
+        val action = NutritionFragmentDirections.action_navigation_nutrition_to_caloriesFragment()
+        view.findNavController().navigate(action)
+    }
 }

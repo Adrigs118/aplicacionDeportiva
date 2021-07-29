@@ -10,9 +10,11 @@
     <string name="nutrition">Nutrición</string>
     <string name="trainingPlans">Planes de entrenamiento</string>
     <string name="diets">Dietas</string>
+    <string name="calories">Calculadora de calorías</string>
     <string name="new_diet">Nueva dieta</string>
     <string name="my_training">Mi rutina</string>
     <string name="trainings">Rutinas</string>
+    <string name="calories_final">Calorías</string>
 
     <string name="monday">Lunes</string>
     <string name="tuesday">Martes</string>
@@ -40,7 +42,7 @@
     <string name="gender">Sexo</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
-    <string name="height">Altura</string>
+    <string name="height">Altura (cm)</string>
     <string name="age">Edad</string>
     <string name="calculate_imc">Calcular Imc</string>
 
@@ -57,7 +59,11 @@
     <string name="warning">Atención</string>
     <string name="Error">Error</string>
 
-    <string name="strechting_desc1">Estirar</string>
+    <string name="strechting_desc1">Estirar los brazos hasta tocar las puntas de los pies</string>
+    <string name="save">Guardar</string>
+    <string name="repetitions">Repeticiones</string>
+    <string name="series">Series</string>
+
 
     <string name="medium">Intermedio</string>
     <string name="easy">Fácil</string>

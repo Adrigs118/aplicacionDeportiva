@@ -1,4 +1,4 @@
-package com.prueba.aplicaciondeportiva.ui.stretchting
+package com.prueba.aplicaciondeportiva.ui.training
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,27 +13,30 @@ import com.prueba.aplicaciondeportiva.MainActivity
 import com.prueba.aplicaciondeportiva.R
 import com.prueba.aplicaciondeportiva.utils.Utils
 import com.prueba.aplicaciondeportiva.viewModel.Strechting.StrechtingDialogViewModel
+import com.prueba.aplicaciondeportiva.viewModel.training.ExerciseDialogViewModel
+import kotlinx.android.synthetic.main.fragment_exercise_description.*
+import kotlinx.android.synthetic.main.fragment_stretchting_description.textView_title_description
+import kotlinx.android.synthetic.main.fragment_stretchting_description.webView_video
 
-class StretchtingDialogFragment : Fragment(){
+class ExerciseDialogFragment : Fragment(){
 
-    private lateinit var viewModel: StrechtingDialogViewModel
+    private lateinit var viewModel: ExerciseDialogViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(com.prueba.aplicaciondeportiva.R.layout.fragment_stretchting_description, container, false)
-        viewModel = ViewModelProviders.of(this).get(StrechtingDialogViewModel::class.java)
+        val root = inflater.inflate(com.prueba.aplicaciondeportiva.R.layout.fragment_exercise_description, container, false)
+        viewModel = ViewModelProviders.of(this).get(ExerciseDialogViewModel::class.java)
         return root
     }
 
     override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val act : MainActivity = activity as MainActivity
-        act.setActionBarTitle(getString(R.string.front_leg))
+        act.setActionBarTitle("Ejercicio abdomen")
         viewModel.initVideo(webView_video)
-        viewModel.initTexts(editText_series, editText_rep, editText_weight_strechting, textView_description, textView_title_description)
+        viewModel.initTexts(textView_description_exercise, textView_title_description_exercise )
     }
-
 }

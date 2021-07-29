@@ -10,10 +10,11 @@
     <string name="nutrition">Nutrition</string>
     <string name="trainingPlans">Training plans</string>
     <string name="diets">Diets</string>
+    <string name="calories">Calories calculator</string>
     <string name="new_diet">New Diet</string>
     <string name="my_training">My Training</string>
     <string name="trainings">Trainings</string>
-
+    <string name="calories_final">Calories</string>
 
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
@@ -32,7 +33,7 @@
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="height">Height</string>
+    <string name="height">Height (cm)</string>
     <string name="age">Age</string>
     <string name="calculate_imc">Calculate Imc</string>
     <string name="imc" translatable="false">Imc</string>
@@ -59,7 +60,10 @@
     <string name="warning">Warning</string>
     <string name="Error">Error</string>
 
-    <string name="strechting_desc1">Estirar</string>
+    <string name="strechting_desc1">Estirar los brazos hasta tocar las puntas de los pies</string>
+    <string name="save">Save</string>
+    <string name="repetitions">Repetitions</string>
+    <string name="series">Series</string>
 
     <string name="medium">Medium</string>
     <string name="easy">Easy</string>

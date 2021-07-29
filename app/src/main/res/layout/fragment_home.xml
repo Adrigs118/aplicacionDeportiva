@@ -17,14 +17,15 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_training"
-            android:layout_marginTop="0dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="2"
             android:foreground="?selectableItemBackground"

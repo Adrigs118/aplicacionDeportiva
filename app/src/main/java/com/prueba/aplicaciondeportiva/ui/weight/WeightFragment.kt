@@ -38,8 +38,8 @@ class WeightFragment : Fragment(){
 
         button_imc.setOnClickListener {
             if(viewModel.checkFields(childFragmentManager, getString(R.string.warning_body_fields_no_exist),
-                getString(R.string.warning_body_fields_no_valid))){
-                viewModel.addImc(graph, editText_weight.text.toString(), editText_height.text.toString())
+                getString(R.string.warning_body_fields_no_valid), editText_height, editText_weight)){
+                viewModel.addImc(graph, editText_height.text.toString(), editText_weight.text.toString())
             }
         }
 

@@ -1,4 +1,4 @@
-package com.prueba.aplicaciondeportiva.viewModel.Strechting
+package com.prueba.aplicaciondeportiva.viewModel.training
 
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
@@ -9,23 +9,25 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.prueba.aplicaciondeportiva.MainActivity
 import com.prueba.aplicaciondeportiva.R
+import com.prueba.aplicaciondeportiva.database.Entity.ExerciseEntity
 import com.prueba.aplicaciondeportiva.database.Entity.StrechtingEntity
 import com.prueba.aplicaciondeportiva.database.GymDatabase
+import com.prueba.aplicaciondeportiva.database.Repository.ExerciseRepository
 import com.prueba.aplicaciondeportiva.database.Repository.StrechtingRepository
 import com.prueba.aplicaciondeportiva.utils.Utils
 import kotlinx.android.synthetic.main.fragment_stretchting_description.*
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class StrechtingDialogViewModel : ViewModel() {
+class ExerciseDialogViewModel : ViewModel() {
 
-    val repository = StrechtingRepository(GymDatabase.getInstance(Utils.getApplicationContext())!!.strechtingDao())
-    var entity : StrechtingEntity? = Utils.strechtingContext
+    val repository = ExerciseRepository(GymDatabase.getInstance(Utils.getApplicationContext())!!.exerciseDao())
+    var entity : ExerciseEntity? = Utils.exerciseContext
 
     fun initVideo(webView_video : WebView){
         try{
             viewModelScope.launch {
-                val url = entity!!.url
+                val url = ""
                 webView_video.settings.javaScriptEnabled = true
                 webView_video.settings.pluginState = WebSettings.PluginState.ON
 
@@ -37,24 +39,9 @@ class StrechtingDialogViewModel : ViewModel() {
         }
     }
 
-    fun initTexts(series : EditText, rep : EditText, weight : EditText, description : TextView, name : TextView){
-        if (entity!!.series != 0) series.setText(entity!!.series)
-        if (entity!!.rep != 0) rep.setText(entity!!.rep)
-        if (entity!!.weight != 0.0F) weight.setText(entity!!.weight.toString())
+    fun initTexts(description : TextView, name : TextView){
         description.text = entity!!.description
-        name.text = entity!!.tag
+        name.text = entity!!.name
     }
 
-
-    fun update(entity : StrechtingEntity) :Boolean{
-        try{
-            viewModelScope.launch {
-                repository.update(entity)
-            }
-            return true
-        }
-        catch (e :Exception){
-            return false
-        }
-    }
 }

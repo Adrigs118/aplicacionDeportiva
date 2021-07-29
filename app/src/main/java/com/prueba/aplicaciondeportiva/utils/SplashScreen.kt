@@ -10,13 +10,11 @@ import android.widget.ImageView
 import androidx.lifecycle.lifecycleScope
 import com.prueba.aplicaciondeportiva.MainActivity
 import com.prueba.aplicaciondeportiva.R
-import com.prueba.aplicaciondeportiva.database.Dao.BodyDao
-import com.prueba.aplicaciondeportiva.database.Dao.ConfigDao
-import com.prueba.aplicaciondeportiva.database.Dao.StrechtingDao
-import com.prueba.aplicaciondeportiva.database.Dao.TrainingDao
+import com.prueba.aplicaciondeportiva.database.Dao.*
 import com.prueba.aplicaciondeportiva.database.Entity.*
 import com.prueba.aplicaciondeportiva.database.GymDatabase
 import com.prueba.aplicaciondeportiva.database.Repository.DietRepository
+import com.prueba.aplicaciondeportiva.database.Repository.ExerciseRepository
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -28,6 +26,7 @@ class SplashScreen : AppCompatActivity() {
     lateinit var  bodyRepository : BodyDao
     lateinit var  strechtingRepository : StrechtingDao
     lateinit var  trainingRepository : TrainingDao
+    lateinit var  exerciseRepository: ExerciseDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +42,7 @@ class SplashScreen : AppCompatActivity() {
         bodyRepository = GymDatabase.getInstance(applicationContext)!!.bodyDao()
         strechtingRepository = GymDatabase.getInstance(applicationContext)!!.strechtingDao()
         trainingRepository = GymDatabase.getInstance(applicationContext)!!.trainingDao()
+        exerciseRepository = GymDatabase.getInstance(applicationContext)!!.exerciseDao()
 
         val backgroundImage : ImageView = findViewById(R.id.SplashScreenImage)
         val rotateAnimation = AnimationUtils.loadAnimation(this,
@@ -74,6 +74,8 @@ class SplashScreen : AppCompatActivity() {
                 bodyRepository.insert(firstBody())
                 strechtingRepository.insert(firstStrechting())
                 trainingRepository.insert(firstTraining())
+                trainingRepository.insert(secondTraining())
+                exerciseRepository.insert(firstExercise())
                 Utils.language = lang
                 Utils.notifications = true
             }
@@ -95,14 +97,25 @@ class SplashScreen : AppCompatActivity() {
     }
 
     fun firstStrechting() : StrechtingEntity {
-        val strechtingEntity = StrechtingEntity(0, "front_leg", getString(R.string.strechting_desc1),0,0,0.0F, "W0M0yfN8Tkc" )
+        val strechtingEntity = StrechtingEntity(0, "Cuadriceps", getString(R.string.strechting_desc1),0,0,0.0F, "W0M0yfN8Tkc" )
         return strechtingEntity
     }
 
     fun firstTraining() : TrainingEntity {
         val trainingEntity = TrainingEntity(0, true,"Cuerpo Completo",  "Entrenamiento del cuerpo completo",
-            3, 3, "Completo")
+            2, 3, "Completo")
         return trainingEntity
+    }
+
+    fun secondTraining() : TrainingEntity {
+        val trainingEntity = TrainingEntity(1, true,"Principiantes",  "Entrenamiento para empezar",
+            1, 2, "Completo")
+        return trainingEntity
+    }
+    fun firstExercise() : ExerciseEntity {
+        val exerciseEntity = ExerciseEntity(0, "Elevación de rodillas colgando", "Realizar un movimiento lateral inclinando el tronco de lado a lado, tetornando a la posición inicial luego de cada inclinación.",
+            1, 1, 1.0F, "Hipertrofia")
+        return exerciseEntity
     }
 
     fun firstDiet() : DietWithDay {
